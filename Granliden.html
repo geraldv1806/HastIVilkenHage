@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VILKET HAGE GÅR HÄSTEN I?</title>
+    <style>
+         header {
+            background-color: #152238;
+            padding: 10px;
+	    text-align: center;
+        }
+	body {
+            background-color: darkblue;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        #dropdown {
+            margin: 20px auto;
+            padding: 10px;
+            width: 300px;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+        #resultBox {
+            margin: 20px auto;
+            padding: 20px;
+            width: 300px;
+            background-color: yellow;
+            font-size: 76px;
+            font-weight: bold;
+            color: black;
+        }
+        .button {
+            padding: 10px 20px;
+            margin-left: 20px; /* Space between the header and button */
+            background-color: #ff2000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Välkommen till Granliden</h1>
+    <h2>Välj häst?</h2>
+<button class="button" onclick="goToPage()">Go to Page</button>
+</header>
+
+    <!-- Embedded Picture -->
+    <img src="HagKarta.jpg" alt="Embedded Image" style="width: 40%; max-width: 500px;">
+
+    <!-- Dropdown Box -->
+    <select id="dropdown" onchange="updateResult()">
+        <option value="">Välj Häst</option>
+        <!-- Add 60 names -->
+         <option value="1">NATORP BO</option>
+         <option value="2">UPSET TILE</option>
+         <option value="3">GUSTAV SIMONI</option>
+        <!-- Add more names as needed -->
+        <option value="4">SHEISPROPULSION</option>
+        <option value="5">UNDER ARMOUR</option>
+        <option value="6">EPICURE</option>
+        <option value="7">ULTIMO TILE</option>
+        <option value="8">BARON D.SOX</option>
+        <option value="9">YTOWNS ULRIK</option>
+        <option value="10">GLOBAL EVERYWHERE</option>
+        <option value="11">PAPA HOCKE</option>
+        <option value="12">NESSUNO IN PJ'S</option>
+        <option value="13">BONAFONTE</option>
+        <option value="16">JAPIRO POWER</option>
+        <option value="17">GRAFFITI BRODDA</option>
+        <option value="15">VINCE WYNN</option>
+        <option value="18">MONESY</option>
+        <option value="14">MILES AWAY</option>
+        <option value="19">GLOBAL HIGHFLYER</option>
+        <option value="20">MILLIE'S GAME</option>
+        <option value="21">ROYAL WIBB</option>
+        <option value="22">ALLSTAR</option>
+        <option value="23">FACE TIME H.</option>
+        <option value="24">LEW'S LADYBIRD</option>
+        <option value="25">LE PEAK</option>
+        <option value="26">GARLESS</option>
+        <option value="27">PEAK ROYAL SCOT</option>
+        <option value="28">LICENSE TO CRUZADE</option>
+        <option value="29">LORENS FLEVO</option>
+        <option value="30">YTOWNS MAGNIFIK</option>
+        <option value="31">STARO THUNDERROAD</option>
+        <option value="32">JEANS N'EPOWER</option>
+        <option value="33">SPACEMAN JOG</option>
+        <option value="34">GAME CHANGER</option>
+        <option value="35">HENESSI JOY</option>
+        <option value="36">GLOBAL ACTION</option>
+        <option value="37">UNFORGETTABLE TILE</option>
+        <option value="38">M.T.URUS</option>
+        
+    </select>
+
+    <!-- Result Box -->
+<div id="resultBox">INGEN HÄST VALD</div>
+
+<script>
+    function updateResult() {
+        const dropdown = document.getElementById('dropdown');
+        const resultBox = document.getElementById('resultBox');
+        const selectedValue = dropdown.value;
+        // Update the result based on the selected name
+        resultBox.innerText = selectedValue ? selectedValue : '0';
+    }
+
+    function goToPage() {
+        window.location.href = "knappar.html"; // Change to your target page URL
+    }
+</script>
+
+</body>
+</html>
