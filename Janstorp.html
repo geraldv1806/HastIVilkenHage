@@ -43,6 +43,7 @@
         }
         .button:hover {
             background-color: #0056b3;
+
         }
     </style>
 </head>
@@ -50,29 +51,30 @@
 <header>
     <h1>Välkommen till Janstorp</h1>
     <h2>Välj häst?</h2>
-    <button class="button" onclick="goToPage()">Go to Page</button>
+    <button class="button" onclick="goToPage()">Gå till Startsida</button>
+    
 </header>
 
 <!-- Embedded Picture -->
-<img src="HagKarta.jpg" alt="Embedded Image" style="width: 40%; max-width: 500px;">
+<img src="HagKartaJanstorp.jpg" alt="Embedded Image" style="width: 40%; max-width: 500px;">
 
 <!-- Dropdown Box -->
 <select id="dropdown" onchange="updateResult()">
     <option value="">Välj Häst</option>
     <!-- Add 60 names -->
-    <option value="1">NATORP BO</option>
-    <option value="2">UPSET TILE</option>
-    <option value="3">GUSTAV SIMONI</option>
-    <option value="4">SHEISPROPULSION</option>
-    <option value="5">UNDER ARMOUR</option>
-    <option value="6">EPICURE</option>
-    <option value="7">ULTIMO TILE</option>
-    <option value="8">BARON D.SOX</option>
-    <option value="9">YTOWNS ULRIK</option>
-    <option value="10">GLOBAL EVERYWHERE</option>
-    <option value="11">PAPA HOCKE</option>
-    <option value="12">NESSUNO IN PJ'S</option>
-    <option value="13">BONAFONTE</option>
+    <option value="1">LADY BELUGA</option>
+    <option value="2">PRINCESS BELUGA</option>
+    <option value="3">RHIANNON</option>
+    <option value="4">REMEMBER ME</option>
+    <option value="5">TAMBURINE TILE</option>
+    <option value="6">PEAK OF CAKE</option>
+    <option value="7">FABULOUS WINE</option>
+    <option value="8">GLOBAL EVERYTIME</option>
+    <option value="9">QILLERBEE</option>
+    <option value="10">GLOBAL DIFFERENCE</option>
+    <option value="11">MARANICHI</option>
+    <option value="12">NASHA</option>
+    <option value="13">EXTRAORDINARY</option>
 </select>
 
 <!-- Result Box -->
@@ -88,7 +90,7 @@
     }
 
     function goToPage() {
-        window.location.href = "knappar.html"; // Change to your target page URL
+        window.location.href = "index.html"; // Change to your target page URL
     }
 </script>
 
