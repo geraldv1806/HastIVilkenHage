@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VILKET HAGE GÅR HÄSTEN I? - Granliden</title>
+    <style>
+         header {
+            background-color: #152238;
+            padding: 10px;
+            text-align: center;
+        }
+        body {
+            background-color: darkblue;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        #dropdown {
+            margin: 20px auto;
+            padding: 10px;
+            width: 300px;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+        #resultBox {
+            margin: 20px auto;
+            padding: 20px;
+            width: 300px;
+            background-color: yellow;
+            font-size: 76px;
+            font-weight: bold;
+            color: black;
+        }
+        .button {
+            padding: 10px 20px;
+            margin-left: 20px; /* Space between the header and button */
+            background-color: #ff2000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+            color: Dark blue;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Välkommen till Granliden</h1>
+    <h2>Välj häst?</h2>
+    <button class="button" onclick="goToIndexPage()">Gå tillbaka till Gårdar</button>
+</header>
+
+    <img src="HagKartaGranliden.jpg" alt="Embedded Image" style="width: 40%; max-width: 500px;">
+
+    <select id="dropdown" onchange="updateResult()">
+        <option value="">Välj Häst</option>
+    </select>
+
+    <div id="resultBox">INGEN HÄST VALD</div>
+
+    <script src="GranlidenData.js"></script> <!-- Include your data file -->
+    <script>
+        // Your existing JavaScript code (loadHorses, updateResult, etc.)
+        function loadHorses() {
+            const horses = JSON.parse(localStorage.getItem('granliden_horses')) || [];
+            const dropdown = document.getElementById('dropdown');
+
+            // Sort horses alphabetically by name
+            horses.sort((a, b) => a.name.localeCompare(b.name));
+
+            horses.forEach(horse => {
+                const option = document.createElement('option');
+                option.value = horse.number; // Use the horse number as the value
+                option.textContent = horse.name; // Display horse name
+                dropdown.appendChild(option);
+            });
+        }
+
+        function updateResult() {
+            const dropdown = document.getElementById('dropdown');
+            const resultBox = document.getElementById('resultBox');
+            const selectedValue = dropdown.value;
+            resultBox.innerText = selectedValue ? selectedValue : 'INGEN HÄST VALD'; // Display the horse number
+        }
+
+        function goToIndexPage() {
+            window.location.href = "index.html"; // Change to your index page URL
+        }
+
+        // Load horses when the page is loaded
+        window.onload = loadHorses;
+    </script>
+
+</body>
+</html>
